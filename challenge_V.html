@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Exercise</title>
+
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+  </head>
+
+  <body>
+
+
+
+
+    <button id="addButton" onclick= "addItemToList(document.getElementById('itemInput').value)">Add Item</button>
+
+    <input type="text" id="itemInput" placeholder="Enter item" />
+
+    
+
+    <button id="showListButton" onclick="printList(addItemToList())">Show List</button>
+
+  </body>
+
+  <script>
+
+    const addToList = () => {
+
+      let list = [];
+
+      return (item) => {
+        list.push(item);
+        return [...list];
+      };
+    };
+
+    // Initialize 
+    const addItemToList = addToList();
+
+    // Print list in alert
+    const printList = (list) => {
+      alert(list.join(", "));
+    };
+
+  </script>
+</html>
