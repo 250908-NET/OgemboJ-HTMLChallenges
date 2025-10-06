@@ -14,13 +14,18 @@
   <script>
 
     const addToList = () => {
-        
+
       let list = [];
 
       return (item) => {
         list.push(item);
         return [...list];
       };
+    };
+
+    // Print list in alert
+    const printList = (list) => {
+      alert(list.join(", "));
     };
 
   </script>
