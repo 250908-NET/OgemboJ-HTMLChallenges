@@ -11,8 +11,17 @@
 
   <body>
 
-    <button id="addButton" onclick="addToList()">Add to List</button>
+
+
+
+    <button id="addButton" onclick= "addItemToList(document.getElementById('itemInput').value)">Add Item</button>
+
+    <input type="text" id="itemInput" placeholder="Enter item" />
+
     
+
+    <button id="showListButton" onclick="printList(addItemToList())">Show List</button>
+
   </body>
 
   <script>
@@ -26,6 +35,9 @@
         return [...list];
       };
     };
+
+    // Initialize 
+    const addItemToList = addToList();
 
     // Print list in alert
     const printList = (list) => {

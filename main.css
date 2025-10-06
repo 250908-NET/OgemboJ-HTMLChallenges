@@ -1,18 +1,44 @@
 
-/* Add button styles */
-#addButton {
-  background-color: #4CAF50; /* Green */
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 24px;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f7f7f8;
+  display: flex;
+ 
+  align-items: center;    
+  gap: 12px;              
+}
+
+
+#itemInput {
+  width: min(420px, 90vw);
+  padding: 10px 12px;
+  border: 2px solid #cbd5e1;
+  border-radius: 8px;
+  outline: none;
+}
+
+#itemInput:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+}
+
+
+button {
+  padding: 10px 16px;
   border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
+  border-radius: 8px;
   cursor: pointer;
-    border-radius: 4px;
+  background: #2563eb;
+  color: #fff;
+  font-weight: 600;
+  transition: transform 0.05s ease, opacity 0.15s ease;
+  min-width: 140px;
 }
-#addButton:hover {
-  background-color: #45a049;
-}
+
+
+
