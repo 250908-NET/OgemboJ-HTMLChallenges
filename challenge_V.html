@@ -10,24 +10,22 @@
   </head>
 
   <body>
-
-
-
-
-    <button id="addButton" onclick= "addItemToList(document.getElementById('itemInput').value)">Add Item</button>
+    <button
+      id="addButton"
+      onclick="addItemToList(document.getElementById('itemInput').value)"
+    >
+      Add Item
+    </button>
 
     <input type="text" id="itemInput" placeholder="Enter item" />
 
-    
-
-    <button id="showListButton" onclick="printList(addItemToList())">Show List</button>
-
+    <button id="showListButton" onclick="printList(addItemToList())">
+      Show List
+    </button>
   </body>
 
   <script>
-
     const addToList = () => {
-
       let list = [];
 
       return (item) => {
@@ -36,13 +34,26 @@
       };
     };
 
-    // Initialize 
+    // Initialize
     const addItemToList = addToList();
 
-    // Print list in alert
-    const printList = (list) => {
-      alert(list.join(", "));
-    };
+    // toast function
 
+    const printList = (list, duration = 3000, { type = "info" } = {}) => {
+      const t = Object.assign(
+        document.body.appendChild(document.createElement("div")),
+        {
+          className: `toast toast-${type}`,
+          textContent: list.join(", "),
+        }
+      );
+      setTimeout(
+        () => (
+          t.classList.add("fade-out"),
+          t.addEventListener("transitionend", () => t.remove())
+        ),
+        duration
+      );
+    };
   </script>
 </html>
